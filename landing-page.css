@@ -1,0 +1,286 @@
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #f7fafc;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+.header {
+    background: linear-gradient(135deg, #4A9EFF 0%, #5AAFFF 100%);
+    color: white;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 60px;    /* Aumenta o espaço azul acima */
+    padding-bottom: 40px; /* Aumenta o espaço azul abaixo */
+}
+
+@media (max-width: 600px) {
+    .logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px; /* Adiciona o espaço azul SÓ abaixo do logo, antes do título H1 */
+    }
+
+    .logo img {
+        max-width: 90%; /* Limita o tamanho do LOGOTIPO */
+        height: auto;
+    }
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px; /* Adiciona o espaço azul SÓ abaixo do logo, antes do título H1 */
+}
+
+.logo img {
+    max-width: 75%; /* Limita o tamanho do LOGOTIPO */
+    height: auto;
+}
+
+.main-title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Secção Hero */
+.hero {
+    background-color: white;
+    padding: 80px 20px;
+    border-bottom: 3px solid #4A9EFF;
+}
+
+.hero-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1a202c;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero-text {
+    font-size: 1.125rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Secção de Serviços */
+.services {
+    background-color: #f7fafc;
+    padding: 80px 20px;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    font-size: 1.125rem;
+    color: #4a5568;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.service-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.service-icon-blue {
+    background-color: #4A9EFF;
+}
+
+.service-icon-green {
+    background-color: #48bb78;
+}
+
+.service-icon-orange {
+    background-color: #ed8936;
+}
+
+.service-icon-red {
+    background-color: #f56565;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 15px;
+}
+
+.service-description {
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+/* Secção CTA */
+.cta {
+    background: linear-gradient(135deg, #5AAFFF 0%, #4A9EFF 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.cta-text {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+/* Contacto (Rodapé) */
+.contact {
+    background-color: #2d3748;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.125rem;
+}
+
+.contact-item svg {
+    opacity: 0.8;
+}
+
+.footer-text {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #4a5568;
+}
+
+/* Responsividade para Mobile */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 1.75rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-text {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-description {
+        font-size: 1rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .service-card {
+        padding: 30px;
+    }
+    
+    .cta-title {
+        font-size: 1.75rem;
+    }
+    
+    .cta-text {
+        font-size: 1.125rem;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .contact-title {
+        font-size: 1.75rem;
+    }
+}
