@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="landing-page.css">
+    <!-- Google reCAPTCHA API -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -21,13 +23,11 @@
                 <img src="images/logo.png" alt="RCoreTech Logo" class="logo-img">
             </a>
 
-            <!-- Navegação Central -->
+            <!-- Navegação Central (Apenas Início | Serviços | Contacto) -->
             <nav class="nav-menu" id="nav-menu">
                 <ul class="nav-list">
                     <li><a href="#inicio" class="nav-link active" data-i18n="nav_home">Início</a></li>
                     <li><a href="#servicos" class="nav-link" data-i18n="nav_services">Serviços</a></li>
-                    <li><a href="#portefolio" class="nav-link" data-i18n="nav_portfolio">Portefólio</a></li>
-                    <li><a href="#testemunhos" class="nav-link" data-i18n="nav_testimonials">Testemunhos</a></li>
                     <li><a href="#contacto" class="nav-link" data-i18n="nav_contact">Contacto</a></li>
                 </ul>
             </nav>
@@ -74,8 +74,6 @@
         <ul class="drawer-list">
             <li><a href="#inicio" class="drawer-link" onclick="closeDrawer()" data-i18n="nav_home">Início</a></li>
             <li><a href="#servicos" class="drawer-link" onclick="closeDrawer()" data-i18n="nav_services">Serviços</a></li>
-            <li><a href="#portefolio" class="drawer-link" onclick="closeDrawer()" data-i18n="nav_portfolio">Portefólio</a></li>
-            <li><a href="#testemunhos" class="drawer-link" onclick="closeDrawer()" data-i18n="nav_testimonials">Testemunhos</a></li>
             <li><a href="#contacto" class="drawer-link" onclick="closeDrawer()" data-i18n="nav_contact">Contacto</a></li>
         </ul>
         <div class="drawer-footer">
@@ -145,130 +143,135 @@
             </div>
         </section>
 
-        <!-- Secção de Serviços (Grid Interativa Glassmorphic) -->
+        <!-- Secção de Serviços (Grid Interativa Sem Espelhamento) -->
         <section class="services" id="servicos">
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag" data-i18n="services_tag">O QUE FAZEMOS</span>
                     <h2 class="section-title" data-i18n="services_title">Os Nossos Serviços Especiais</h2>
                     <p class="section-subtitle" data-i18n="services_subtitle">
-                        Passe o rato (ou toque) sobre cada cartão para explorar o detalhe das nossas soluções informáticas.
+                        Passe o rato (ou toque) sobre cada cartão para revelar a lista detalhada do que está incluído.
                     </p>
                 </div>
 
                 <div class="services-grid">
                     <!-- Serviço 1: Presença Digital -->
-                    <div class="service-glass-card" tabindex="0">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="service-icon icon-blue">
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="service-card-title" data-i18n="s1_title">Serviços de Presença Digital</h3>
-                                <p class="service-card-desc" data-i18n="s1_desc">
-                                    Desenvolvimento de websites modernos, registo de domínios e configuração de e-mails corporativos.
-                                </p>
-                                <span class="card-hover-hint" data-i18n="card_hover_hint">Passe o rato para ver mais &rarr;</span>
+                    <div class="service-glass-card">
+                        <div class="card-front-content">
+                            <div class="service-icon icon-blue">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
                             </div>
-                            <div class="card-back">
-                                <h4 class="back-title" data-i18n="s1_back_title">O que está incluído:</h4>
-                                <ul class="service-checklist">
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s1_i1">Criação & Registo de Domínios (.pt, .com)</span></li>
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s1_i2">Websites One Page & Multi-página</span></li>
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s1_i3">E-mails Institucionais Personalizados</span></li>
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s1_i4">Otimização SEO & Segurança SSL</span></li>
-                                </ul>
+                            <h3 class="service-card-title" data-i18n="s1_title">Serviços de Presença Digital</h3>
+                            <p class="service-card-desc" data-i18n="s1_desc">
+                                Desenvolvimento de websites modernos, registo de domínios e configuração de e-mails corporativos.
+                            </p>
+                            <div class="card-reveal-btn">
+                                <span data-i18n="card_hover_hint">Ver o que está incluído &darr;</span>
                             </div>
+                        </div>
+
+                        <!-- Painel de Revelação Deslizante em Glassmorphism -->
+                        <div class="card-details-overlay">
+                            <h4 class="details-title" data-i18n="s1_back_title">O que está incluído:</h4>
+                            <ul class="service-checklist">
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s1_i1">Criação & Registo de Domínios (.pt, .com)</span></li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s1_i2">Websites One Page & Multi-página</span></li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s1_i3">E-mails Institucionais Personalizados</span></li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s1_i4">Otimização SEO & Segurança SSL</span></li>
+                            </ul>
                         </div>
                     </div>
 
                     <!-- Serviço 2: Suporte Técnico -->
-                    <div class="service-glass-card" tabindex="0">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="service-icon icon-orange">
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="service-card-title" data-i18n="s2_title">Suporte Técnico 360º</h3>
-                                <p class="service-card-desc" data-i18n="s2_desc">
-                                    Assistência completa a hardware e software com apoio presencial no Sotavento Algarvio e remoto nacional.
-                                </p>
-                                <span class="card-hover-hint" data-i18n="card_hover_hint">Passe o rato para ver mais &rarr;</span>
+                    <div class="service-glass-card">
+                        <div class="card-front-content">
+                            <div class="service-icon icon-orange">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                                </svg>
                             </div>
-                            <div class="card-back">
-                                <h4 class="back-title" data-i18n="s2_back_title">O que está incluído:</h4>
-                                <ul class="service-checklist">
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s2_i1">Diagnóstico & Manutenção de PC/Mac</span></li>
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s2_i2">Instalação & Configuração de Software</span></li>
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s2_i3">Apoio Remoto & Intervenção Presencial</span></li>
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s2_i4">Limpeza Física & Troca de Componentes</span></li>
-                                </ul>
+                            <h3 class="service-card-title" data-i18n="s2_title">Suporte Técnico 360º</h3>
+                            <p class="service-card-desc" data-i18n="s2_desc">
+                                Assistência completa a hardware e software com apoio presencial no Sotavento Algarvio e remoto nacional.
+                            </p>
+                            <div class="card-reveal-btn">
+                                <span data-i18n="card_hover_hint">Ver o que está incluído &darr;</span>
                             </div>
+                        </div>
+
+                        <div class="card-details-overlay">
+                            <h4 class="details-title" data-i18n="s2_back_title">O que está incluído:</h4>
+                            <ul class="service-checklist">
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s2_i1">Diagnóstico & Manutenção de PC/Mac</span></li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s2_i2">Instalação & Configuração de Software</span></li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s2_i3">Apoio Remoto & Intervenção Presencial</span></li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s2_i4">Limpeza Física & Troca de Componentes</span></li>
+                            </ul>
                         </div>
                     </div>
 
                     <!-- Serviço 3: Infraestrutura de Redes -->
-                    <div class="service-glass-card" tabindex="0">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="service-icon icon-purple">
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                        <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                        <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                                        <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                                    </svg>
-                                </div>
-                                <h3 class="service-card-title" data-i18n="s3_title">Infraestrutura de Redes</h3>
-                                <p class="service-card-desc" data-i18n="s3_desc">
-                                    Planeamento, montagem de bastidores, routers, firewalls e passagem de cablagem para escritórios.
-                                </p>
-                                <span class="card-hover-hint" data-i18n="card_hover_hint">Passe o rato para ver mais &rarr;</span>
+                    <div class="service-glass-card">
+                        <div class="card-front-content">
+                            <div class="service-icon icon-purple">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                                </svg>
                             </div>
-                            <div class="card-back">
-                                <h4 class="back-title" data-i18n="s3_back_title">O que está incluído:</h4>
-                                <ul class="service-checklist">
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s3_i1">Instalação de Bastidores & Racks</span></li>
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s3_i2">Configuração de Routers / Firewalls</span></li>
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s3_i3">Passagem & Organização de Cabos</span></li>
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s3_i4">Implementação de Wi-Fi de Alta Velocidade</span></li>
-                                </ul>
+                            <h3 class="service-card-title" data-i18n="s3_title">Infraestrutura de Redes</h3>
+                            <p class="service-card-desc" data-i18n="s3_desc">
+                                Planeamento, montagem de bastidores, routers, firewalls e passagem de cablagem para escritórios.
+                            </p>
+                            <div class="card-reveal-btn">
+                                <span data-i18n="card_hover_hint">Ver o que está incluído &darr;</span>
                             </div>
+                        </div>
+
+                        <div class="card-details-overlay">
+                            <h4 class="details-title" data-i18n="s3_back_title">O que está incluído:</h4>
+                            <ul class="service-checklist">
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s3_i1">Instalação de Bastidores & Racks</span></li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s3_i2">Configuração de Routers / Firewalls</span></li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s3_i3">Passagem & Organização de Cabos</span></li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s3_i4">Implementação de Wi-Fi de Alta Velocidade</span></li>
+                            </ul>
                         </div>
                     </div>
 
                     <!-- Serviço 4: Venda & Licenciamento -->
-                    <div class="service-glass-card" tabindex="0">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="service-icon icon-teal">
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                                        <path d="M16 10a4 4 0 0 1-8 0"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="service-card-title" data-i18n="s4_title">Venda & Licenciamento</h3>
-                                <p class="service-card-desc" data-i18n="s4_desc">
-                                    Seleção e fornecimento do melhor hardware e licenças de software adequadas ao seu negócio.
-                                </p>
-                                <span class="card-hover-hint" data-i18n="card_hover_hint">Passe o rato para ver mais &rarr;</span>
+                    <div class="service-glass-card">
+                        <div class="card-front-content">
+                            <div class="service-icon icon-teal">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                </svg>
                             </div>
-                            <div class="card-back">
-                                <h4 class="back-title" data-i18n="s4_back_title">O que está incluído:</h4>
-                                <ul class="service-checklist">
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s4_i1">Hardware (Computadores, Impressoras)</span></li>
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s4_i2">Licenciamento Office & Antivírus</span></li>
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s4_i3">Software de Faturação Empresarial</span></li>
-                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s4_i4">Aconselhamento Técnico Personalizado</span></li>
-                                </ul>
+                            <h3 class="service-card-title" data-i18n="s4_title">Venda & Licenciamento</h3>
+                            <p class="service-card-desc" data-i18n="s4_desc">
+                                Seleção e fornecimento do melhor hardware e licenças de software adequadas ao seu negócio.
+                            </p>
+                            <div class="card-reveal-btn">
+                                <span data-i18n="card_hover_hint">Ver o que está incluído &darr;</span>
                             </div>
+                        </div>
+
+                        <div class="card-details-overlay">
+                            <h4 class="details-title" data-i18n="s4_back_title">O que está incluído:</h4>
+                            <ul class="service-checklist">
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s4_i1">Hardware (Computadores, Impressoras)</span></li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s4_i2">Licenciamento Office & Antivírus</span></li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s4_i3">Software de Faturação Empresarial</span></li>
+                                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b00" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="s4_i4">Aconselhamento Técnico Personalizado</span></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -282,193 +285,7 @@
             </div>
         </section>
 
-        <!-- NOVA Secção: Portefólio / Trabalhos Realizados (Carrossel Interativo) -->
-        <section class="portfolio" id="portefolio">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag" data-i18n="portfolio_tag">PROJETOS EM DESTAQUE</span>
-                    <h2 class="section-title" data-i18n="portfolio_title">Portefólio / Trabalhos Realizados</h2>
-                    <p class="section-subtitle" data-i18n="portfolio_subtitle">
-                        Conheça alguns dos projetos executados pela RCoreTech, demonstrando o nosso domínio 360º.
-                    </p>
-                </div>
-
-                <!-- Carrossel -->
-                <div class="carousel-container" id="portfolio-carousel">
-                    <div class="carousel-track">
-                        <!-- Slide 1: Hardware -->
-                        <div class="carousel-slide active">
-                            <div class="portfolio-card">
-                                <div class="portfolio-img-wrapper">
-                                    <img src="images/portfolio-hardware.png" alt="Manutenção de Hardware">
-                                    <span class="portfolio-badge" data-i18n="p1_badge">Hardware & Manutenção</span>
-                                </div>
-                                <div class="portfolio-info">
-                                    <h3 class="portfolio-title" data-i18n="p1_title">Montagem & Otimização de Workstations</h3>
-                                    <p class="portfolio-desc" data-i18n="p1_desc">
-                                        Configuração de equipamentos de elevada performance com gestão rigorosa de cabos, refrigeração eficiente e testes de estabilidade.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2: Web -->
-                        <div class="carousel-slide">
-                            <div class="portfolio-card">
-                                <div class="portfolio-img-wrapper">
-                                    <img src="images/portfolio-web.png" alt="Website Responsivo">
-                                    <span class="portfolio-badge" data-i18n="p2_badge">Presença Digital</span>
-                                </div>
-                                <div class="portfolio-info">
-                                    <h3 class="portfolio-title" data-i18n="p2_title">Desenvolvimento de Plataforma Web Corporate</h3>
-                                    <p class="portfolio-desc" data-i18n="p2_desc">
-                                        Criação de website moderno em formato One Page expansível, com otimização SEO avançada e compatibilidade mobile total.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 3: Redes -->
-                        <div class="carousel-slide">
-                            <div class="portfolio-card">
-                                <div class="portfolio-img-wrapper">
-                                    <img src="images/portfolio-network.png" alt="Instalação de Rede">
-                                    <span class="portfolio-badge" data-i18n="p3_badge">Infraestrutura de Redes</span>
-                                </div>
-                                <div class="portfolio-info">
-                                    <h3 class="portfolio-title" data-i18n="p3_title">Instalação de Bastidor & Rede Estruturada</h3>
-                                    <p class="portfolio-desc" data-i18n="p3_desc">
-                                        Implementação de infraestrutura de rede completa para escritório corporativo, incluindo cablagem Cat6 e switch gerido.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4: Suporte -->
-                        <div class="carousel-slide">
-                            <div class="portfolio-card">
-                                <div class="portfolio-img-wrapper">
-                                    <img src="images/portfolio-support.png" alt="Suporte Técnico">
-                                    <span class="portfolio-badge" data-i18n="p4_badge">Suporte Remoto & Monitorização</span>
-                                </div>
-                                <div class="portfolio-info">
-                                    <h3 class="portfolio-title" data-i18n="p4_title">Central de Apoio & Diagnóstico Remoto</h3>
-                                    <p class="portfolio-desc" data-i18n="p4_desc">
-                                        Monitorização contínua e assistência em tempo real para prevenção de falhas e manutenção de sistemas informáticos.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Controlo de Navegação -->
-                    <button class="carousel-btn prev-btn" id="carousel-prev" aria-label="Anterior">&#10094;</button>
-                    <button class="carousel-btn next-btn" id="carousel-next" aria-label="Seguinte">&#10095;</button>
-
-                    <!-- Indicadores (Dots) -->
-                    <div class="carousel-dots" id="carousel-dots"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NOVA Secção: Confiança e Testemunhos (Social Proof) -->
-        <section class="trust-testimonials" id="testemunhos">
-            <!-- Faixa de Logótipos / Clientes -->
-            <div class="trust-banner">
-                <div class="container">
-                    <p class="trust-title" data-i18n="trust_banner_title">EMPRESAS QUE CONFIAM NA RCORETECH</p>
-                    <div class="partner-logos">
-                        <div class="partner-logo">
-                            <svg width="120" height="40" viewBox="0 0 120 40" fill="currentColor">
-                                <rect x="5" y="10" width="20" height="20" rx="4" opacity="0.4"/>
-                                <text x="32" y="25" font-family="sans-serif" font-weight="bold" font-size="14" opacity="0.6">FaroLogistics</text>
-                            </svg>
-                        </div>
-                        <div class="partner-logo">
-                            <svg width="120" height="40" viewBox="0 0 120 40" fill="currentColor">
-                                <circle cx="15" cy="20" r="10" opacity="0.4"/>
-                                <text x="32" y="25" font-family="sans-serif" font-weight="bold" font-size="14" opacity="0.6">SotaventoHealth</text>
-                            </svg>
-                        </div>
-                        <div class="partner-logo">
-                            <svg width="120" height="40" viewBox="0 0 120 40" fill="currentColor">
-                                <polygon points="15,8 25,28 5,28" opacity="0.4"/>
-                                <text x="32" y="25" font-family="sans-serif" font-weight="bold" font-size="14" opacity="0.6">TaviraGourmet</text>
-                            </svg>
-                        </div>
-                        <div class="partner-logo">
-                            <svg width="120" height="40" viewBox="0 0 120 40" fill="currentColor">
-                                <rect x="5" y="8" width="22" height="22" rx="11" opacity="0.4"/>
-                                <text x="34" y="25" font-family="sans-serif" font-weight="bold" font-size="14" opacity="0.6">OlhãoMaritime</text>
-                            </svg>
-                        </div>
-                        <div class="partner-logo">
-                            <svg width="120" height="40" viewBox="0 0 120 40" fill="currentColor">
-                                <path d="M5,20 L15,10 L25,20 L15,30 Z" opacity="0.4"/>
-                                <text x="32" y="25" font-family="sans-serif" font-weight="bold" font-size="14" opacity="0.6">VRSA Retail</text>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Grelha de Testemunhos -->
-            <div class="container testimonials-container">
-                <div class="section-header">
-                    <span class="section-tag" data-i18n="testimonials_tag">PROVA SOCIAL</span>
-                    <h2 class="section-title" data-i18n="testimonials_title">O Que Dizem os Nossos Clientes</h2>
-                </div>
-
-                <div class="testimonials-grid">
-                    <!-- Testemunho 1 -->
-                    <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-quote" data-i18n="t1_quote">
-                            "A RCoreTech reformulou toda a rede informática do nosso escritório em Faro. A rapidez e a transparência no diagnóstico foram excecionais!"
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">MS</div>
-                            <div class="author-details">
-                                <strong>Eng. Miguel Silva</strong>
-                                <span data-i18n="t1_role">Diretor de Operações | Faro Logistics</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testemunho 2 -->
-                    <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-quote" data-i18n="t2_quote">
-                            "O nosso novo website e a configuração dos emails institucionais ficaram impecáveis. Sempre disponíveis para suporte remoto quando precisamos."
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">SM</div>
-                            <div class="author-details">
-                                <strong>Dra. Sofia Martins</strong>
-                                <span data-i18n="t2_role">Sócia-Gerente | Sotavento Health</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testemunho 3 -->
-                    <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-quote" data-i18n="t3_quote">
-                            "Assistência técnica fantástica para o nosso restaurante. Resolveram a avaria nos nossos computadores no próprio dia."
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">AG</div>
-                            <div class="author-details">
-                                <strong>António Gonçalves</strong>
-                                <span data-i18n="t3_role">Proprietário | Tavira Gourmet</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Secção de Contacto (Lead Generation + Mapa Sotavento) -->
+        <!-- Secção de Contacto (Lead Generation + Mapa Sotavento + reCAPTCHA) -->
         <section class="contact-section" id="contacto">
             <div class="container">
                 <div class="section-header">
@@ -557,7 +374,7 @@
                         </div>
                     </div>
 
-                    <!-- Coluna Direita: Formulário de Contacto (Lead Gen) -->
+                    <!-- Coluna Direita: Formulário de Contacto Com reCAPTCHA -->
                     <div class="contact-form-col">
                         <form class="contact-form" id="lead-form" onsubmit="handleFormSubmit(event)">
                             <h3 class="form-title" data-i18n="form_title">Enviar Mensagem</h3>
@@ -593,6 +410,25 @@
                             <div class="form-group">
                                 <label for="message" data-i18n="lbl_message">Mensagem / Detalhes do Pedido *</label>
                                 <textarea id="message" rows="4" required placeholder="Descreva brevemente o que necessita..." class="form-textarea"></textarea>
+                            </div>
+
+                            <!-- Componente reCAPTCHA de Segurança -->
+                            <div class="recaptcha-wrapper">
+                                <div class="recaptcha-box">
+                                    <label class="recaptcha-checkbox-label">
+                                        <input type="checkbox" id="recaptcha-check" class="recaptcha-input" onchange="toggleRecaptcha(this)">
+                                        <span class="recaptcha-checkbox"></span>
+                                        <span class="recaptcha-text" data-i18n="recaptcha_label">Não sou um robô</span>
+                                    </label>
+                                    <div class="recaptcha-badge">
+                                        <svg class="recaptcha-logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                            <path d="m9 12 2 2 4-4" stroke="#34a853" stroke-width="2.5" stroke-linecap="round"/>
+                                        </svg>
+                                        <span class="recaptcha-brand">reCAPTCHA</span>
+                                        <span class="recaptcha-privacy">Privacidade - Termos</span>
+                                    </div>
+                                </div>
                             </div>
 
                             <button type="submit" class="btn btn-orange w-100 btn-lg" id="submit-btn" data-i18n="btn_submit">
@@ -634,8 +470,6 @@
                 <ul class="footer-links">
                     <li><a href="#inicio" data-i18n="nav_home">Início</a></li>
                     <li><a href="#servicos" data-i18n="nav_services">Serviços</a></li>
-                    <li><a href="#portefolio" data-i18n="nav_portfolio">Portefólio</a></li>
-                    <li><a href="#testemunhos" data-i18n="nav_testimonials">Testemunhos</a></li>
                     <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
                 </ul>
             </div>

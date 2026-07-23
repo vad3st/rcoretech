@@ -1,7 +1,7 @@
 /* ==========================================================================
    RCORETECH - INTERACTIVE SPA JAVASCRIPT
-   Features: Multi-language (PT/EN), Typing Animation, Portfolio Carousel,
-   Glassmorphism Cards Touch/Flip, Modals, Lead Form Validation.
+   Features: Multi-language (PT/EN), Typing Animation, Glassmorphism Cards,
+   reCAPTCHA Security Validation, Modals, Lead Form Handler.
    ========================================================================== */
 
 // 1. DICIONÁRIO DE TRADUÇÕES (PT / EN)
@@ -9,8 +9,6 @@ const i18n = {
     pt: {
         nav_home: "Início",
         nav_services: "Serviços",
-        nav_portfolio: "Portefólio",
-        nav_testimonials: "Testemunhos",
         nav_contact: "Contacto",
         btn_remote_support: "Suporte Remoto",
         hero_badge: "TECNOLOGIA & INOVAÇÃO 360º",
@@ -23,8 +21,8 @@ const i18n = {
         stat_3: "Atendimento Presencial",
         services_tag: "O QUE FAZEMOS",
         services_title: "Os Nossos Serviços Especiais",
-        services_subtitle: "Passe o rato (ou toque) sobre cada cartão para explorar o detalhe das nossas soluções informáticas.",
-        card_hover_hint: "Passe o rato para ver mais →",
+        services_subtitle: "Passe o rato (ou toque) sobre cada cartão para revelar a lista detalhada do que está incluído.",
+        card_hover_hint: "Ver o que está incluído ↓",
         s1_title: "Serviços de Presença Digital",
         s1_desc: "Desenvolvimento de websites modernos, registo de domínios e configuração de e-mails corporativos.",
         s1_back_title: "O que está incluído:",
@@ -58,35 +56,6 @@ const i18n = {
         s4_i4: "Aconselhamento Técnico Personalizado",
 
         btn_full_services: "Ver Lista Completa de Serviços",
-        portfolio_tag: "PROJETOS EM DESTAQUE",
-        portfolio_title: "Portefólio / Trabalhos Realizados",
-        portfolio_subtitle: "Conheça alguns dos projetos executados pela RCoreTech, demonstrando o nosso domínio 360º.",
-        p1_badge: "Hardware & Manutenção",
-        p1_title: "Montagem & Otimização de Workstations",
-        p1_desc: "Configuração de equipamentos de elevada performance com gestão rigorosa de cabos, refrigeração eficiente e testes de estabilidade.",
-
-        p2_badge: "Presença Digital",
-        p2_title: "Desenvolvimento de Plataforma Web Corporate",
-        p2_desc: "Criação de website moderno em formato One Page expansível, com otimização SEO avançada e compatibilidade mobile total.",
-
-        p3_badge: "Infraestrutura de Redes",
-        p3_title: "Instalação de Bastidor & Rede Estruturada",
-        p3_desc: "Implementação de infraestrutura de rede completa para escritório corporativo, incluindo cablagem Cat6 e switch gerido.",
-
-        p4_badge: "Suporte Remoto & Monitorização",
-        p4_title: "Central de Apoio & Diagnóstico Remoto",
-        p4_desc: "Monitorização contínua e assistência em tempo real para prevenção de falhas e manutenção de sistemas informáticos.",
-
-        trust_banner_title: "EMPRESAS QUE CONFIAM NA RCORETECH",
-        testimonials_tag: "PROVA SOCIAL",
-        testimonials_title: "O Que Dizem os Nossos Clientes",
-        t1_quote: '"A RCoreTech reformulou toda a rede informática do nosso escritório em Faro. A rapidez e a transparência no diagnóstico foram excecionais!"',
-        t1_role: "Diretor de Operações | Faro Logistics",
-        t2_quote: '"O nosso novo website e a configuração dos emails institucionais ficaram impecáveis. Sempre disponíveis para suporte remoto quando precisamos."',
-        t2_role: "Sócia-Gerente | Sotavento Health",
-        t3_quote: '"Assistência técnica fantástica para o nosso restaurante. Resolveram a avaria nos nossos computadores no próprio dia."',
-        t3_role: "Proprietário | Tavira Gourmet",
-
         contact_tag: "FALE CONNOSCO",
         contact_title: "Solicite o Seu Orçamento Grátis",
         contact_subtitle: "Estamos prontos para impulsionar a tecnologia do seu negócio. Preencha o formulário ou entre em contacto direto.",
@@ -110,6 +79,7 @@ const i18n = {
         opt_venda: "Venda de Equipamento & Licenciamento",
         opt_outro: "Outro Assunto",
         lbl_message: "Mensagem / Detalhes do Pedido *",
+        recaptcha_label: "Não sou um robô",
         btn_submit: "Enviar Pedido de Orçamento",
         whatsapp_tooltip: "Fale connosco no WhatsApp",
         footer_desc: "Soluções informáticas 360º para particulares e empresas. Excelência, rapidez e proximidade tecnológica do Algarve para todo o país.",
@@ -126,8 +96,6 @@ const i18n = {
     en: {
         nav_home: "Home",
         nav_services: "Services",
-        nav_portfolio: "Portfolio",
-        nav_testimonials: "Testimonials",
         nav_contact: "Contact",
         btn_remote_support: "Remote Support",
         hero_badge: "360º TECHNOLOGY & INNOVATION",
@@ -140,8 +108,8 @@ const i18n = {
         stat_3: "On-site Service",
         services_tag: "WHAT WE DO",
         services_title: "Our Specialized Services",
-        services_subtitle: "Hover (or tap) over each card to explore details of our IT solutions.",
-        card_hover_hint: "Hover to see details →",
+        services_subtitle: "Hover (or tap) over each card to reveal the detailed list of included items.",
+        card_hover_hint: "See what is included ↓",
         s1_title: "Digital Presence Services",
         s1_desc: "Development of modern websites, domain registration, and custom corporate email setup.",
         s1_back_title: "What is included:",
@@ -175,35 +143,6 @@ const i18n = {
         s4_i4: "Expert Technical Procurement Advice",
 
         btn_full_services: "View Complete Services List",
-        portfolio_tag: "FEATURED PROJECTS",
-        portfolio_title: "Portfolio / Practical Work",
-        portfolio_subtitle: "Discover real-world projects executed by RCoreTech demonstrating our 360º expertise.",
-        p1_badge: "Hardware & Maintenance",
-        p1_title: "Workstation Build & Optimization",
-        p1_desc: "High-performance PC assembly with neat cable management, efficient cooling, and stability testing.",
-
-        p2_badge: "Digital Presence",
-        p2_title: "Corporate Web Platform Development",
-        p2_desc: "Creation of a modern responsive corporate website with advanced SEO and mobile compatibility.",
-
-        p3_badge: "Network Infrastructure",
-        p3_title: "Rack Cabinet & Structured Cabling Setup",
-        p3_desc: "Full office network implementation including Cat6 cabling and managed switch configuration.",
-
-        p4_badge: "Remote Support & Monitoring",
-        p4_title: "Remote Monitoring & Helpdesk Station",
-        p4_desc: "Continuous system health monitoring and real-time support to prevent IT downtime.",
-
-        trust_banner_title: "COMPANIES THAT TRUST RCORETECH",
-        testimonials_tag: "SOCIAL PROOF",
-        testimonials_title: "What Our Clients Say",
-        t1_quote: '"RCoreTech upgraded our entire office network in Faro. Their speed and transparent diagnostics were exceptional!"',
-        t1_role: "Operations Director | Faro Logistics",
-        t2_quote: '"Our new website and email configuration are flawless. Always available for fast remote support when needed."',
-        t2_role: "Managing Partner | Sotavento Health",
-        t3_quote: '"Fantastic technical assistance for our restaurant. They fixed our computer issues on the very same day."',
-        t3_role: "Owner | Tavira Gourmet",
-
         contact_tag: "GET IN TOUCH",
         contact_title: "Request Your Free Quote",
         contact_subtitle: "We are ready to boost your business technology. Fill in the form or contact us directly.",
@@ -227,6 +166,7 @@ const i18n = {
         opt_venda: "Sales & Software Licensing",
         opt_outro: "Other Topic",
         lbl_message: "Message / Project Details *",
+        recaptcha_label: "I'm not a robot",
         btn_submit: "Send Quote Request",
         whatsapp_tooltip: "Chat with us on WhatsApp",
         footer_desc: "360º IT solutions for individuals and businesses. Excellence, speed, and tech proximity from the Algarve to nationwide.",
@@ -314,81 +254,7 @@ function switchLanguage(lang) {
     typeEffect();
 }
 
-// 4. PORTFOLIO CAROUSEL
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-const dotsContainer = document.getElementById('carousel-dots');
-let autoSlideInterval = null;
-
-function initCarousel() {
-    if (!slides.length || !dotsContainer) return;
-
-    // Create indicator dots
-    dotsContainer.innerHTML = '';
-    slides.forEach((_, i) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(i));
-        dotsContainer.appendChild(dot);
-    });
-
-    document.getElementById('carousel-prev')?.addEventListener('click', prevSlide);
-    document.getElementById('carousel-next')?.addEventListener('click', nextSlide);
-
-    startAutoSlide();
-
-    // Pause auto slide on hover
-    const carouselEl = document.getElementById('portfolio-carousel');
-    if (carouselEl) {
-        carouselEl.addEventListener('mouseenter', stopAutoSlide);
-        carouselEl.addEventListener('mouseleave', startAutoSlide);
-    }
-}
-
-function updateCarousel() {
-    const track = document.querySelector('.carousel-track');
-    if (!track) return;
-
-    track.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-    // Update active slide class
-    slides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === currentSlide);
-    });
-
-    // Update dots
-    const dots = document.querySelectorAll('.dot');
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-    });
-}
-
-function goToSlide(index) {
-    currentSlide = index;
-    updateCarousel();
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateCarousel();
-}
-
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    updateCarousel();
-}
-
-function startAutoSlide() {
-    stopAutoSlide();
-    autoSlideInterval = setInterval(nextSlide, 6000);
-}
-
-function stopAutoSlide() {
-    if (autoSlideInterval) clearInterval(autoSlideInterval);
-}
-
-// 5. MOBILE DRAWER NAVIGATION
+// 4. MOBILE DRAWER NAVIGATION
 const mobileToggle = document.getElementById('mobile-toggle');
 const mobileDrawer = document.getElementById('mobile-drawer');
 const drawerClose = document.getElementById('drawer-close');
@@ -409,7 +275,7 @@ function closeDrawer() {
     }
 }
 
-// 6. MODALS MANAGEMENT
+// 5. MODALS MANAGEMENT
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
@@ -445,15 +311,16 @@ function openLegalModal(type) {
         contentEl.innerHTML = `
             <p><strong>A RCoreTech garante a total privacidade e proteção dos dados dos seus utilizadores.</strong></p>
             <p>1. <strong>Recolha de Dados:</strong> Os dados recolhidos através do nosso formulário de contacto (Nome, Email, Telefone) destinam-se exclusivamente à resposta de pedidos de informação e orçamentos.</p>
-            <p>2. <strong>Não Partilha:</strong> Não cedemos ou vendemos os seus dados a terceiros em nenhuma circunstância.</p>
-            <p>3. <strong>Direitos do Titular:</strong> Tem o direito de solicitar a consulta, retificação ou eliminação total dos seus dados pessoais dos nossos registos através do email <code>geral@rcoretech.pt</code>.</p>
+            <p>2. <strong>Segurança Anti-Spam:</strong> O formulário é protegido por verificação reCAPTCHA para impedir submissões maliciosas ou automatizadas.</p>
+            <p>3. <strong>Não Partilha:</strong> Não cedemos ou vendemos os seus dados a terceiros em nenhuma circunstância.</p>
+            <p>4. <strong>Direitos do Titular:</strong> Tem o direito de solicitar a consulta, retificação ou eliminação total dos seus dados pessoais dos nossos registos através do email <code>geral@rcoretech.pt</code>.</p>
         `;
     } else if (type === 'privacidade') {
         titleEl.textContent = 'Política de Privacidade';
         contentEl.innerHTML = `
             <p>Esta Política de Privacidade estabelece como a RCoreTech utiliza e protege a informação que fornece ao navegar neste site.</p>
-            <p>• <strong>Cookies:</strong> Utilizamos apenas cookies estritamente necessários para o funcionamento e desempenho da plataforma.</p>
-            <p>• <strong>Segurança:</strong> Implementamos medidas de encriptação SSL e protocolos técnicos de segurança para prevenir acessos não autorizados.</p>
+            <p>• <strong>Cookies & Segurança:</strong> Utilizamos apenas cookies estritamente necessários para o funcionamento e proteção da plataforma contra bots via reCAPTCHA.</p>
+            <p>• <strong>Proteção de Dados:</strong> Implementamos medidas de encriptação SSL e protocolos técnicos para prevenir acessos não autorizados.</p>
         `;
     } else if (type === 'termos') {
         titleEl.textContent = 'Termos de Serviço';
@@ -467,24 +334,46 @@ function openLegalModal(type) {
     openModal('legal-modal');
 }
 
-// 7. FORM SUBMISSION HANDLER
+// 6. RECAPTCHA & FORM SUBMISSION HANDLER
+let isRecaptchaVerified = false;
+
+function toggleRecaptcha(checkbox) {
+    isRecaptchaVerified = checkbox.checked;
+    const feedback = document.getElementById('form-feedback');
+    if (feedback && isRecaptchaVerified) {
+        feedback.textContent = '';
+    }
+}
+
 function handleFormSubmit(e) {
     e.preventDefault();
     const feedback = document.getElementById('form-feedback');
     const submitBtn = document.getElementById('submit-btn');
+    const recaptchaCheck = document.getElementById('recaptcha-check');
 
     if (!feedback || !submitBtn) return;
 
+    // Verificar se o reCAPTCHA foi selecionado
+    if (!recaptchaCheck || !recaptchaCheck.checked) {
+        feedback.style.color = '#ef4444';
+        feedback.textContent = currentLang === 'pt' 
+            ? '⚠️ Por favor, confirme que não é um robô (marque o reCAPTCHA).'
+            : '⚠️ Please confirm that you are not a robot (check the reCAPTCHA).';
+        return;
+    }
+
     submitBtn.disabled = true;
-    submitBtn.textContent = currentLang === 'pt' ? 'A enviar...' : 'Sending...';
+    submitBtn.textContent = currentLang === 'pt' ? 'A verificar reCAPTCHA & a enviar...' : 'Verifying reCAPTCHA & sending...';
 
     setTimeout(() => {
         feedback.style.color = '#16a34a';
         feedback.textContent = currentLang === 'pt' 
-            ? '✓ Obrigado! O seu pedido de orçamento foi enviado com sucesso. Entraremos em contacto brevemente.'
-            : '✓ Thank you! Your quote request has been sent successfully. We will get back to you soon.';
+            ? '✓ Obrigado! O seu pedido de orçamento foi enviado em segurança. Entraremos em contacto brevemente.'
+            : '✓ Thank you! Your quote request has been sent securely. We will get back to you soon.';
         
         document.getElementById('lead-form').reset();
+        recaptchaCheck.checked = false;
+        isRecaptchaVerified = false;
         submitBtn.disabled = false;
         submitBtn.textContent = currentLang === 'pt' ? 'Enviar Pedido de Orçamento' : 'Send Quote Request';
 
@@ -494,10 +383,9 @@ function handleFormSubmit(e) {
     }, 1200);
 }
 
-// 8. INITIALIZATION ON DOM LOADED
+// 7. INITIALIZATION ON DOM LOADED
 document.addEventListener('DOMContentLoaded', () => {
     typeEffect();
-    initCarousel();
 
     // Active Navigation Highlight on Scroll
     const sections = document.querySelectorAll('section[id]');
